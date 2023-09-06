@@ -8,6 +8,13 @@ eu uso o vscode como editor e rodo tudo pelo terminal criando um executavel, par
 depois do executavel criado eu rodo pelo próprio terminal usando ./"nome do executavel que colocou no gcc"
 */
 
+/* Eu usei o vscode para programar, e usei o cógido gcc -o "nome do executavel que desejar" "nome do programa".c
+
+isso vai criar um executavel do programa e para executar eu usava ./"nome do executavel indicou anteriormente"
+
+assim ele vai executar o programa pelo terminal e todos as saídas também seram lá. */
+
+
 int multiplica_matriz(int na, int ma, int nb, int mb, float matrizA[na][ma], float matrizB[nb][mb], float matrizC[na][mb], int n, float matriz_resul[na][mb]) {
     for (int i = 0; i < na; i++) {
         for (int j = 0; j < mb; j++){
