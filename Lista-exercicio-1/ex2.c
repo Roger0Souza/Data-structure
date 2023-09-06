@@ -14,6 +14,8 @@ isso vai criar um executavel do programa e para executar eu usava ./"nome do exe
 
 assim ele vai executar o programa pelo terminal e todos as saídas também seram lá. */
 
+// para testar aqui, primeiro digites os valores pedidos, e ao pedir os elementos das matrizes digite elemento por elemento separado por um espaço, linha por linha da matriz em apenas 1 linha (1 input)
+
 
 int multiplica_matriz(int na, int ma, int nb, int mb, float matrizA[na][ma], float matrizB[nb][mb], float matrizC[na][mb], int n, float matriz_resul[na][mb]) {
     for (int i = 0; i < na; i++) {

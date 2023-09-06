@@ -6,6 +6,10 @@ isso vai criar um executavel do programa e para executar eu usava ./"nome do exe
 
 assim ele vai executar o programa pelo terminal e todos as saídas também seram lá. */
 
+//para testar digite a quantidade de notas que deseja qualcular se a quantidade for válida então ele vai fazer a média, caso contrário dara um erro
+//caso a quantidade de notas digitadas no inicio é diferente da quantidade de notas passadas em "Digite os valores das notas" então ocorrera um erro e o programa vai parar
+//certifique-se de digitar corretamente os valores pedidos
+
 
 void main(){
     int q;

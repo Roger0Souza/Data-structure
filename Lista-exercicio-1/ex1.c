@@ -7,6 +7,7 @@ isso vai criar um executavel do programa e para executar eu usava ./"nome do exe
 
 assim ele vai executar o programa pelo terminal e todos as saídas também seram lá. */
 
+
 int main() {
     char p1[100], p2[100], p[100];
     char resul[100];
