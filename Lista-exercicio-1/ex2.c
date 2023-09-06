@@ -1,6 +1,52 @@
 #include <stdio.h>
 #include <string.h>
 
+/* fiz o programa de forma com que o professor ou corretor possa digitar sua matriz, e suas dimensões, a princípio para treinar
+
+eu uso o vscode como editor e rodo tudo pelo terminal criando um executavel, para criar eu uso o gcc -o "qualquer nome do executavel que desejar" "nome do programa".c
+
+depois do executavel criado eu rodo pelo próprio terminal usando ./"nome do executavel que colocou no gcc"
+*/
+
+int multiplica_matriz(int na, int ma, int nb, int mb, float matrizA[na][ma], float matrizB[nb][mb], float matrizC[na][mb], int n, float matriz_resul[na][mb]) {
+    for (int i = 0; i < na; i++) {
+        for (int j = 0; j < mb; j++){
+            matrizC[i][j] = 0.0;
+            for (int k = 0; k < na; k++){
+                matrizC[i][j] += matrizA[i][k] * matrizB[k][j];
+            }
+        }
+    }
+
+    //inicializando matriz resultante de C
+    for(int i = 0; i < na; i++){
+        for (int j=0; j<mb; j++){
+            matriz_resul[i][j] = matrizC[i][j];
+        }
+    }
+
+    for (int count = 1; count < n; count++) {
+        float matrizTemp[na][mb];
+
+        //copia matriz resultado atual
+        for (int i = 0; i < na; i++) {
+            for (int j = 0; j < mb; j++) {
+                matrizTemp[i][j] = matriz_resul[i][j];
+            }
+        }
+        // multiplicação matriz resultado atual com matrizC original
+        for (int i = 0; i < na; i++) {
+            for (int j = 0; j < mb; j++) {
+                matriz_resul[i][j] = 0;
+
+                for (int k = 0; k < na; k++) {
+                    matriz_resul[i][j] += matrizTemp[i][k] * matrizC[k][j];
+                }
+            }
+        }
+    }
+}
+
 void main(){
 
     int na, nb, ma, mb, n;
@@ -11,6 +57,7 @@ void main(){
     printf("Digite quantas vezes deseja efetuar a multiplicação: ");
     scanf("%d", &n);
     
+
     //validando
 
     //verificar se a multiplicação n vezes é possível
@@ -22,67 +69,38 @@ void main(){
     if (ma != nb || na != mb) {
         printf("As matrizes não podem ser multiplicadas n vezes\n");
     } else { //entrando com os dados
-        int matrizA[na][ma], matrizB[nb][mb];
-        printf("Digite elementos da primeira matriz (%d x %d) linha por linha (Ex: 1 2 3 4 5 6 ...): ", na, ma);
-        for (int i = 0; i < na; i++ ) {
-            for (int j = 0; j < ma; j++) {
-                scanf("%d", &matrizA[i][j]);
-            }
-        }
-        printf("Digite elementos da segunda matriz (%d x %d) linha por linha: ", nb, mb);
-        for (int i = 0; i < na; i++ ) {
-            for (int j = 0; j < ma; j++) {
-                scanf("%d", &matrizB[i][j]);
-            }
-        }
+        if (n >= 1) {
+            float matrizA[na][ma];
+            float matrizB[nb][mb];
+            float matrizC[na][mb];
+            float matriz_resul[na][mb];
 
-        //Obtendo matriz C_resultado
-        int C_resul[na][mb];
-
-        //preenchendo matriz C_resultante com 0
-        //for (int i = 0; i < na; i++) {
-        //    for (int j = 0; j < mb; j++) {
-        //        C_resul[i][j] = 0;
-        //    }
-        //}
-
-        for (int i = 0; i < na; i++) {
-            for (int j = 0; j < mb; j++) {
-                C_resul[i][j] = 0;
-                for (int k = 0; k < na; k++) {
-                    C_resul[i][j] += matrizA[i][k] * matrizB[k][j];
+            //Exemplo digite o valor como: 1 2 3 4 5 6 ... n, espaçados apenas por um espaço
+            printf("Digite os valores de matriz A linha por linha: ");
+            //lendo matriz
+            for (int i = 0; i < na; i++){
+                for (int j = 0; j <ma; j++){
+                    scanf("%2f", &matrizA[i][j]);
                 }
             }
-        }
-
-        int matriz_resul[na][mb];
-
-        for (int i = 0; i < na; i++) {
-            for (int j = 0; j < mb; j++) {
-                matriz_resul[i][j] = 0;
-                for (int k = 0; k < na; k++) {
-                    matriz_resul[i][j] = C_resul[i][k] * C_resul[k][j];
+            printf("Digite os valores da matriz B: ");
+            //lendo matriz
+            for (int i = 0; i < na; i++){
+                for (int j = 0; j <ma; j++){
+                    scanf("%2f", &matrizB[i][j]);
                 }
-                
             }
 
-        }
-        
+            multiplica_matriz(na,ma,nb,mb,matrizA,matrizB,matrizC,n,matriz_resul);
 
-        //mostrando matriz C_resultante da multiplicação de A e B
-        printf("Matriz C_resultante C (%d x %d):\n", na, mb);
-        for (int i = 0; i < na; i++) {
-            for (int j = 0; j < mb; j++) {
-                printf("%d ", C_resul[i][j]);
-        }
-        printf("\n");
-        //mostrando matriz resultado de n multiplicações
-        printf("Multiplicação da matriz n vezes (%d x %d):\n", na, mb);
-        for (int i = 0; i < na; i++) {
-            for (int j = 0; j < mb; j++) {
-                printf("%d ", matriz_resul[i][j]);
-        }
-        printf("\n");
-    }
+            printf("MatrizC (%d x %d) resultante da multiplicação n vezes: \n", na, mb);
+            for(int i = 0; i < na; i++){
+                for (int j=0; j<mb; j++){
+                    printf("%f ", matriz_resul[i][j]);
+                }
+                printf("\n");
+            }
+        } 
     }
 }
+
