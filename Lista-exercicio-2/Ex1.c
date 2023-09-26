@@ -1,3 +1,11 @@
+/*
+    Para Executar o o TAD basta usar: gcc -o "nome executavel" complexo.h
+
+    Fiz o programa de forma que o usuário consiga definir 2 números complexos exemplo de digitação: a+bi sendo a e b qualquer número real
+
+    Para executar o programa main basta usar: gcc -0 "nome executavel" Ex1.c
+*/
+
 #include <stdio.h>
 #include <complexo.h>
 #include <math.h>
