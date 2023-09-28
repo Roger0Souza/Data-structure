@@ -7,7 +7,7 @@
 */
 
 #include <stdio.h>
-#include <complexo.h>
+#include "complexo.h"
 #include <math.h>
 
 int main() {
