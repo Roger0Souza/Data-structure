@@ -1,3 +1,7 @@
+//Aluno: Roger Rafael Serqueira de souza Nº USP: 11895006
+//Aluno: Danilo Carneiro Oliveira Nº USP: 11895006
+
+
 /*
     Para Executar o o TAD basta usar: gcc -o "nome executavel" complexo.h
 
@@ -5,6 +9,7 @@
 
     Para executar o programa main basta usar: gcc -0 "nome executavel" Ex1.c
 */
+
 
 #include <stdio.h>
 #include "complexo.h"

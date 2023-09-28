@@ -1,9 +1,11 @@
+// Nome: Roger Rafael Serqueira de Souza nº USP: 11895006
+// Nome: Danilo Carneiro Oliveira nº USP: 10259985
+
 #include <stdio.h>
 #include <math.h>
  
 #define MAX_LINHA 10
 #define MAX_COL 10
-
 
 typedef struct matriz
 {
@@ -21,7 +23,7 @@ void imprimi(Matriz mt){
     }
     printf("\n");
 }
-
+//aqui estava usando apenas para visualizar oque eu estava fazendo
 void imprimiComEdereco(Matriz *mt){
     for (int i = 0; i < mt->linhas; i++) {
         printf("\n");

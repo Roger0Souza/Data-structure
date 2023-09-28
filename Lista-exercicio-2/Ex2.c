@@ -1,3 +1,22 @@
+//Aluno: Roger Rafael Serqueira de souza Nº USP: 11895006
+//Aluno: Danilo Carneiro Oliveira Nº USP: 11895006
+
+
+/*
+
+para executar o programa eu usei o gcc -o "nome executavel" Ex2.c
+
+no menu tem algumas intruções de como usa-lo, em geral testei para matrizes 2x2
+
+na hora de definir o tamanho da matriz, defina separado por virgula exemplo: Digite as dimensões da primeira matriz:
+2,2
+
+para colocar os dados das duas matrizes deve digitar o número e em seguida apertar enter assim vai colocando linha por linha e coluna por coluna
+
+uma maneira rapida tb é executar o programa main, com o arquivo .txt de acordo com o input e operação que deseja realizar
+
+*/
+
 
 #include <stdio.h>
 #include <math.h>
@@ -13,8 +32,8 @@ int main(){
     Matriz matrix1 = createMatriz(n1,m1);
     printf("Digite os valores da matriz 2 \n");
     Matriz matrix2 = createMatriz(n2,m2);
-    printf("Digite qual operação deseja realizar: \n Multiplicar matrizes Digite: 1 \n Multiplicar (A*B)^n Digite: 2 \n Somar Digite: 3 \n Subtrair Digite: 4");
-    scanf("%d", opera);
+    printf("\n Multiplicar matrizes Digite: 1 \n Multiplicar (A*B)^n Digite: 2 \n Somar Digite: 3 \n Subtrair Digite: 4  \n Digite qual operação deseja realizar: ");
+    scanf("%d", &opera);
     Matriz mult_AB;
     Matriz C;
     Matriz Sum;
@@ -43,8 +62,8 @@ int main(){
         Sub.linhas = matrix1.linhas;
         Sub.colunas = matrix2.colunas;
         printf("\n");
-        sum_matriz(&Sub, matrix1, matrix2);
-        imprimi(Sum);
+        sub_matriz(&Sub, matrix1, matrix2);
+        imprimi(Sub);
 
     }
 

@@ -1,3 +1,7 @@
+//Aluno: Roger Rafael Serqueira de souza Nº USP: 11895006
+//Aluno: Danilo Carneiro Oliveira Nº USP: 11895006
+
+
 #include <stdio.h>
 #include <math.h>
 
